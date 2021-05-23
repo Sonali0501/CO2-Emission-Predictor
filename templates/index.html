@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>CO2 Emission Predictor</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+  <section class="head">
+    <img src="{{ url_for('static', filename='images/img1.jpg') }}" class="background" alt="img" />
+    <div class="buttons">
+      <div class="button">
+        <a href="#prediction">Predict Your Vehicle's <br/> CO₂ Emission</a>
+        <a href="#prediction"><img width="36px" src="{{ url_for('static', filename='images/arrow-right-solid.svg') }}" class="arrow" alt="arrow-icon" /></a>
+      </div>
+      <div class="button">
+        <a href="#">Get Some Suggestions</a>
+        <a href="#prediction"><img width="36px" src="{{ url_for('static', filename='images/arrow-right-solid.svg') }}" class="arrow" alt="arrow-icon" /></a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="prediction">
+    <h1>Predict CO2 Emission of Vehicles</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting 
+      industry. Lorem Ipsum has been the industry's standard dummy text 
+      ever since the 1500s, when an unknown printer took a galley of type 
+      and scrambled it to make a type specimen book. It has survived not 
+      only five centuries, but also the leap into electronic typesetting, 
+      remaining essentially unchanged. It was popularised in the 1960s 
+      with the release of Letraset sheets containing Lorem Ipsum passages, 
+      and more recently with desktop publishing software like Aldus 
+      PageMaker including versions of Lorem Ipsum.</p>
+      <div class="response">{{ prediction_text }}</div>
+      <div class="mid">
+      <img src="{{ url_for('static', filename='images/img2.jpg') }}" alt="img" />
+      <div class="form">
+        <h4> Enter the following values to predict the CO2 emission from the vehicle</h4>
+        
+        <form action="{{ url_for('predict')}}"method="post">
+          <input type="text" name="enginesize" placeholder="Engine Size" required="required" />
+          <input type="text" name="cylinders" placeholder="Cylinders" required="required" />
+          <input type="text" name="fuel" placeholder="Fuel" required="required" />
+
+          <button type="submit" class="btn">Predict</button>
+        </form>
+
+      </div>
+    </div>
+    
+  </section>
+
+
+</body>
+</html>
