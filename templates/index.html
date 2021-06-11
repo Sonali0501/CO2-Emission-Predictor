@@ -57,6 +57,14 @@
     
   </section>
 
-
 </body>
+
+  {% if scroll %}
+  <script>
+      document.getElementById('{{ scroll }}').scrollIntoView();
+      // or
+      document.location.hash = '#' + '{{ scroll }}';
+  </script>
+  {% endif %}
+
 </html>

@@ -13,7 +13,7 @@ def home():
     return render_template('index.html')
 
 #To use the predict button in our web-app
-@app.route('/predict',methods=['POST'])
+@app.route('/',methods=['POST'])
 def predict():
     int_features = [float(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
@@ -21,7 +21,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='CO2 Emission of the vehicle is :{}'.format(output))
+    return render_template('index.html', prediction_text='CO2 Emission of the vehicle is :{}'.format(output), scroll="prediction")
 
 if __name__ == "__main__":
     app.run(debug=True)
