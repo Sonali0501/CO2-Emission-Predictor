@@ -1,36 +1,16 @@
-'''
-This is a simple linear regression model to predit the CO2 emmission from cars
-Dataset: FuelConsumptionCo2.csv, 
-which contains model-specific fuel consumption ratings and estimated carbon dioxide emissions
-for new light-duty vehicles for retail sale.
-'''
-
+import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 import pickle
 
-df = pd.read_csv("FuelConsumptionCo2.csv")
-
-#use required features
-cdf = df[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB','CO2EMISSIONS']]
-
-# Training Data and Predictor Variable
-# Use all data for training (tarin-test-split not used)
-x = cdf.iloc[:, :3]
-y = cdf.iloc[:, -1]
+dataset = pd.read_csv('FuelConsumptionCo2.csv')
+X = dataset.iloc[:, 4:6].values
+X = np.concatenate((X,dataset.iloc[:, 10:11].values),axis=1) 
+Y = dataset.iloc[:, -1].values
 
 
 regressor = LinearRegression()
 
-#Fitting model with trainig data
-regressor.fit(x, y)
+regressor.fit(X, Y)
 
-# Saving model to disk
-# Pickle serializes objects so they can be saved to a file, and loaded in a program again later on.
 pickle.dump(regressor, open('model.pkl','wb'))
-
-'''
-#Loading model to compare the results
-model = pickle.load(open('model.pkl','rb'))
-print(model.predict([[2.6, 8, 10.1]]))
-'''
