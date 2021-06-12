@@ -5,7 +5,12 @@
 # Virtual Environment SetUp (Windows)
 
 `pip install virtualenv`
+
+Then
+
 `mkvirtualenv <name virtualenv>`
+OR
+`vitualenv <name virtualenv>`
 
 # Installing requirements of the project
 
@@ -23,3 +28,5 @@
 # To activate virtualenv
 
 `workon <name virtualenv>`
+OR
+`<name virtualenv>\Scripts\activate`
