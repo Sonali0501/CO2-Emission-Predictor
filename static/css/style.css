@@ -16,10 +16,24 @@ body {
 
 .head{
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 100px;
 	height: 720px;
 	background: #b6a7b2;
     background: -webkit-linear-gradient(rgba(55, 58, 92, 0.6), rgba(195, 55, 100, 0.6));
     background: linear-gradient(rgba(29, 38, 113, 0.6), rgba(195, 55, 100, 0.6));
+}
+
+.head h2{
+	color: #fff;
+	font-size: 36px;
+	font-weight: 700;
+	width: 60%;
+	margin: 0px !important;
+	text-align: center;
 }
 
 .head .background{
@@ -37,10 +51,8 @@ body {
     align-items: center;
     justify-content: center;
     margin-left: auto;
-    height: 100%;
-    width: 100%;
     z-index: 1;
-	gap: 50px;
+	gap: 60px;
     position: relative;
     margin-right: auto;
 }
@@ -48,26 +60,26 @@ body {
 .head .buttons .button{
 	background-color: #fff;
 	width: 200px;
-	height: 200px;
-	border-radius: 30%;
-	/* padding: 20px 10px; */
+	height: 170px;
 	display: flex;
 	flex-direction: row;
-}
-
-.head .buttons .button a img{
-	margin-right: 20px;
+	background: rgba( 255, 255, 255, 0.55 );
+	backdrop-filter: blur( 0.0px );
+	-webkit-backdrop-filter: blur( 0.0px );
+	border-radius: 15px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .head .buttons .button:hover{
-	transform: translateY(10px);
-	background-color: #e7f1fc;
+	transform: translateY(2px);
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
 .head .buttons .button a{
-	color: #041b33;
+	color: #333333;
 	outline: none;
-	font-size: 24px;
+	font-size: 20px;
+	font-weight: 600;
 	text-decoration: none;
 	align-self: center;
 }

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>CO2 Emission Predictor</title>
+  <title>CO₂ Emission Predictor</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -15,6 +15,7 @@
 <body>
   <section class="head">
     <img src="{{ url_for('static', filename='images/carCO2.png') }}" class="background" alt="img" />
+    <h2>Want to have some control over CO₂ emission of your vehicle?</h2>
     <div class="buttons">
       <div class="button">
         <a href="#prediction">Predict Your Vehicle's <br/> CO₂ Emission</a>
@@ -26,7 +27,7 @@
   </section>
   
   <section id="prediction">
-    <h1>Predict CO2 Emission of Vehicles</h1>
+    <h1>Predict CO₂ Emission of Vehicles</h1>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting 
       industry. Lorem Ipsum has been the industry's standard dummy text 
       ever since the 1500s, when an unknown printer took a galley of type 
@@ -40,7 +41,7 @@
       <div class="mid">
       <img src="{{ url_for('static', filename='images/img2.jpg') }}" alt="img" />
       <div class="form">
-        <h4> Enter the following values to predict the CO2 emission from the vehicle</h4>
+        <h4> Enter the following values to predict the CO₂ emission from the vehicle</h4>
         
         <form action="{{ url_for('predict')}}"method="post">
           <input type="text" name="enginesize" placeholder="Engine Size" required="required" />
