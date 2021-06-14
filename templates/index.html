@@ -41,9 +41,9 @@
         <h4> Enter the following values to predict the CO₂ emission from the vehicle</h4>
         
         <form action="{{ url_for('predict')}}"method="post">
-          <input type="text" name="enginesize" placeholder="Engine Size" required="required" />
-          <input type="text" name="cylinders" placeholder="Cylinders" required="required" />
-          <input type="text" name="fuel" placeholder="Fuel" required="required" />
+          <input type="number" step="0.1" name="enginesize" min="1" max="8" placeholder="Engine Size" required="required" />
+          <input type="number" step="0.1" name="cylinders" min="3" max="12" placeholder="Cylinders" required="required" />
+          <input type="number" step="0.1" name="fuel" min="4" max="21" placeholder="Fuel Consumption" required="required" />
 
           <button type="submit" class="btn">Predict</button>
         </form>
