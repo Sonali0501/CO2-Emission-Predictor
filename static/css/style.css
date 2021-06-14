@@ -25,6 +25,7 @@ body {
 	background: #b6a7b2;
     background: -webkit-linear-gradient(rgba(55, 58, 92, 0.6), rgba(195, 55, 100, 0.6));
     background: linear-gradient(rgba(29, 38, 113, 0.6), rgba(195, 55, 100, 0.6));
+	
 }
 
 .head h2{
@@ -37,7 +38,7 @@ body {
 }
 
 .head .background{
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 0;
 	width: 100%;
@@ -126,6 +127,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	padding-top: 40px;
+	background-color: transparent;
 }
 
 #prediction .response{
