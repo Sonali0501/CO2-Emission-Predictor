@@ -17,11 +17,13 @@
     <img src="{{ url_for('static', filename='images/carCO2.png') }}" class="background" alt="img" />
     <h2>Want to have some control over CO₂ emission of your vehicle?</h2>
     <div class="buttons">
-      <div class="button">
+      <div class="button" onclick="location.href='#prediction'">
         <a href="#prediction">Predict Your Vehicle's <br/> CO₂ Emission</a>
+        <span></span>
       </div>
-      <div class="button">
-        <a href="#">Get Some Suggestions</a>
+      <div class="button" onclick="location.href='#'">
+        <a href="#">Get Some Suggestions for new vehicle</a>
+        <span></span>
       </div>
     </div>
   </section>

@@ -62,7 +62,9 @@ body {
 	width: 200px;
 	height: 170px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	background: rgba( 255, 255, 255, 0.55 );
 	backdrop-filter: blur( 0.0px );
 	-webkit-backdrop-filter: blur( 0.0px );
@@ -70,9 +72,39 @@ body {
 	border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.head .buttons .button:hover{
-	transform: translateY(2px);
-	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+.button a{
+	position:absolute;
+	height: min-content;
+	transition: 0.5s all ease-in-out;
+}
+
+.button span {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	transition: 0.5s;
+}
+
+.button span:after {
+	content: '\02EF';
+	position: absolute;
+	color: #333333;
+	opacity: 0;
+	left: -15px;
+	bottom: -60px;
+	transition: 0.5s;
+	font-size: 100px;
+	font-weight: 700;
+}
+
+.button:hover span:after {
+	opacity: 0.8;
+	bottom: -80px;
+}
+
+.button:hover a{
+	top: 35px;
 }
 
 .head .buttons .button a{
