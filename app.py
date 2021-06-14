@@ -21,7 +21,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='CO2 Emission of the vehicle is :{}'.format(output), scroll="prediction")
+    return render_template('index.html',eng_size=int_features[0], cylinders=int_features[1], fuel=int_features[2], emission=output, scroll="prediction")
 
 if __name__ == "__main__":
     app.run(debug=True)

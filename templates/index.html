@@ -13,7 +13,8 @@
 </head>
 
 <body>
-  <section class="head">
+
+  <section class="head" id="content">
     <img src="{{ url_for('static', filename='images/carCO2.png') }}" class="background" alt="img" />
     <h2>Want to have some control over CO₂ emission of your vehicle?</h2>
     <div class="buttons">
@@ -28,18 +29,13 @@
     </div>
   </section>
   
+
   <section id="prediction" >
     <h1>Predict CO₂ Emission of Vehicles</h1>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting 
-      industry. Lorem Ipsum has been the industry's standard dummy text 
-      ever since the 1500s, when an unknown printer took a galley of type 
-      and scrambled it to make a type specimen book. It has survived not 
-      only five centuries, but also the leap into electronic typesetting, 
-      remaining essentially unchanged. It was popularised in the 1960s 
-      with the release of Letraset sheets containing Lorem Ipsum passages, 
-      and more recently with desktop publishing software like Aldus 
-      PageMaker including versions of Lorem Ipsum.</p>
-      <div class="response">{{ prediction_text }}</div>
+    <p>It really is surprising how much CO2 emissions we produce in everyday life. For instance, CO2 and other emissions are caused 
+      when driving a car, heating a house, cooking, working, celebrating or flying. These CO2 emissions can easily be calculated with 
+      our co2 emitter calculator.Calculate the number of tons your car emits into the atmosphere</p>
+      
       <div class="mid">
       <div class="form">
         <h4> Enter the following values to predict the CO₂ emission from the vehicle</h4>
@@ -53,6 +49,17 @@
         </form>
 
       </div>
+      {% if emission %}
+      <div class="response-div">
+        <div class="response">
+          <p>Engine Size = {{eng_size}}</p>
+          <p>Cylinders = {{cylinders}}</p>
+          <p>Fuel = {{fuel}}</p>
+          <h5>CO₂ Emission </h5>
+          <h2>{{emission}}</h2>
+        </div>
+      </div>
+      {% endif %}
     </div>
     
   </section>
