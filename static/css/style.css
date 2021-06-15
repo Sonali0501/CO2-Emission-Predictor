@@ -197,7 +197,7 @@ body {
 	margin: 10px 50px !important;
 }
 
-.btn{
+.form .btn{
   color: #333333;
   background-color: #fff;
   border: none;
@@ -251,3 +251,94 @@ input {
 	transition: box-shadow .5s ease;
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+#suggestion{
+	height: 700px;
+	display: flex;
+	flex-direction: column;
+	padding-top: 30px;
+	background-color: transparent;
+	background: #b6a7b2;
+    background: -webkit-linear-gradient(rgba(55, 58, 92, 0.6), rgba(195, 55, 100, 0.6));
+    background: linear-gradient(rgba(29, 38, 113, 0.6), rgba(195, 55, 100, 0.6));
+}
+
+#suggestion h2{
+	color: #fff;
+	margin: 10px 50px !important;
+}
+
+#suggestion .filters form{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 50px;
+}
+
+#suggestion .filters form input{
+	width: 200px !important;
+	margin-bottom: 0px !important;
+}
+
+#suggestion .filters form .btn{
+	background: rgba( 255, 255, 255, 0.7 );
+	backdrop-filter: blur( 0.0px );
+	-webkit-backdrop-filter: blur( 0.0px );
+	border-radius: 8px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	color: #333333;
+	border: none;
+	text-align: center;
+	border-radius: 8px;
+	padding: 14px 40px;
+	font-weight: 600;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.results{
+	margin-top: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.results p{
+	padding: 0px;
+    margin: 0px !important;
+    font-size: 32px;
+    width: 60%;
+    padding-top: 50px;
+	color: #b6a7b2;
+}
+
+#list {
+	border-collapse: collapse;
+	width: 80%;
+}
+
+#list td, #list th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+#list tr:nth-child(even){ background-color: #f2f2f2; }
+
+#list tr:nth-child(odd){ background-color: #ddd; }
+
+#list tr:hover { background-color: #ddd; }
+
+#list th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #b6a7b2;
+	color: #333333;
+}
+  

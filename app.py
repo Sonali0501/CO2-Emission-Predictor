@@ -3,17 +3,15 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 
-#Initialize the flask App
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
-#default page of our web-app
 @app.route('/')
 def home():
     return render_template('index.html')
 
-#To use the predict button in our web-app
-@app.route('/',methods=['POST'])
+
+@app.route('/predict',methods=['POST'])
 def predict():
     int_features = [float(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
@@ -22,6 +20,13 @@ def predict():
     output = round(prediction[0], 2)
 
     return render_template('index.html',eng_size=int_features[0], cylinders=int_features[1], fuel=int_features[2], emission=output, scroll="prediction")
+
+@app.route('/suggest',methods=['POST'])
+def suggest():
+    filters = [x for x in request.form.values()]
+
+    return render_template('index.html', scroll="suggestion",fuel_type=filters[0], vehicle_class=filters[1], make=filters[2] ,results=True)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
