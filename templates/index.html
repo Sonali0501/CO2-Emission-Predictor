@@ -95,7 +95,8 @@
           <option value="PICKUP TRUCK - STANDARD">
           <option value="STATION WAGON - MID-SIZE">
           <option value="STATION WAGON - SMALL">
-          <option value="SUV">
+          <option value="SUV - SMALL">
+          <option value="SUV - STANDARD">
           <option value="TWO-SEATER">
           <option value="VAN - CARGO">
           <option value="VAN - PASSENGER">
@@ -146,9 +147,13 @@
 
     <div class="results">
       {% if results %}
-      
-      {{ data | safe }}
-           
+        {% if not_found %}
+          <div class="no-results">
+            <p style="color: rgb(202, 200, 200); width:100%; font-weight:700; padding-top:100px; font-size:32px;">No results found...!</p>
+          </div>    
+        {% else %}
+          {{ data | safe }}
+        {% endif %}
       {% else %}
         <div class="no-results">
           <img src="{{ url_for('static', filename='images/co21.png') }}" height="300px" width="300px" class="image" alt="img" />
