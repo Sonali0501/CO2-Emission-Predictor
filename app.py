@@ -31,7 +31,6 @@ def predict():
 @app.route('/suggest',methods=['POST'])
 def suggest():
     filters = [x for x in request.form.values()]
-    print(filters)
     
     data = pd.read_csv("FuelConsumption.csv")
 
