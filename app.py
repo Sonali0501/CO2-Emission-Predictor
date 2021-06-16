@@ -39,7 +39,7 @@ def suggest():
     
     dataset=filt.loc[:,['FUELTYPE','VEHICLE CLASS','MAKE','MODEL','CO2EMISSIONS']]
     
-    return render_template('index.html', scroll="suggestion",fuel_type=filters[0], vehicle_class=filters[1], make=filters[2] ,results=True, data=dataset.head(8).to_html())
+    return render_template('index.html', scroll="suggestion",fuel_type=filters[0], vehicle_class=filters[1], make=filters[2] ,results=True, data=dataset.head(8).to_html(classes = "list"))
 
 
 if __name__ == "__main__":
