@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <title>CO₂ Emission Predictor</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='images/co2.png') }}">
 </head>
 
 <body>
@@ -41,9 +41,9 @@
         <h4> Enter the following values to predict the CO₂ emission from the vehicle</h4>
         
         <form action="{{ url_for('predict')}}"method="post">
-          <input type="number" step="0.1" name="enginesize" min="1" max="8" placeholder="Engine Size" required="required" />
+          <input type="number" step="0.1" name="enginesize" min="1" max="8" placeholder="Engine Size (in litres)" required="required" />
           <input type="number" step="0.1" name="cylinders" min="3" max="12" placeholder="Cylinders" required="required" />
-          <input type="number" step="0.1" name="fuel" min="4" max="21" placeholder="Fuel Consumption" required="required" />
+          <input type="number" step="0.1" name="fuel" min="4" max="21" placeholder="Fuel Consumption (in km/litre)" required="required" />
 
           <button type="submit" class="btn">Predict</button>
         </form>
@@ -53,11 +53,11 @@
       {% if emission %}
       <div class="response-div">
         <div class="response">
-          <p>Engine Size = {{eng_size}}</p>
+          <p>Engine Size = {{eng_size}} litres</p>
           <p>Cylinders = {{cylinders}}</p>
-          <p>Fuel = {{fuel}}</p>
+          <p>Fuel Consumption = {{fuel}} km/litre</p>
           <h5>CO₂ Emission </h5>
-          <h2>{{emission}}</h2>
+          <h2>{{emission}} g/litre</h2>
         </div>
       </div>
       {% endif %}
