@@ -193,9 +193,10 @@
         </table>
 
       {% else %}
-        
-        <p>Choose some filters and hit suggest to see suggestions of vehicles with less CO₂ emissions</p>
-
+        <div class="no-results">
+          <img src="{{ url_for('static', filename='images/co21.png') }}" height="300px" width="300px" class="image" alt="img" />
+          <p>Choose some filters and hit suggest to see suggestions of vehicles with less CO₂ emissions</p>
+        </div>
       {% endif %}
   
 
